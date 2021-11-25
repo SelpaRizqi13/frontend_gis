@@ -67,6 +67,7 @@ const getColor = (d) =>{
 		  : d > 3223
           ? "#BD0026"
 		  : d > 3224
+      
           ? "#FD8D3C"
 		  : d > 3225
           ? "#FD8D3C"
