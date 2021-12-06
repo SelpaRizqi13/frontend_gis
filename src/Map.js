@@ -85,7 +85,7 @@ class Map extends React.Component {
     const url = "http://127.0.0.1:8000/api/getDaerah";
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    console.log(data.data);
 
     // create map
     this.map = L.map("map", {
@@ -104,7 +104,7 @@ class Map extends React.Component {
 
     let template =`
     <h1>8 Unsur Budaya</h1> 
-    <img src={budaya} /> </br>
+    <img src=${budaya} width="100%" height="100"/> </br>
     <a href="">1. Religi</a></br>
     <a href="">2. Kekerabatan dan Organisasi Sosial</a> </br>
     <a href="">3. Bahasa</a></br>
@@ -114,9 +114,9 @@ class Map extends React.Component {
     <a href="">7. Pengetahuan</a></br>
     <a href="">8. Makanan</a></br>
     `
-
-    L.marker([-6.551776, 106.629128]).addTo(this.map)
-    .bindPopup(template);
+    console.log(budaya)
+    data.data.map(d=> L.marker([d.latitude, d.longitude]).addTo(this.map)
+    .bindPopup(template))
 
     this.geojson = L.geoJson(statesData, {
       style: mapStyle,
