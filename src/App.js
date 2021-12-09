@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Map from './Map';
+import Religi from './view/Religi';
+import Deskripsi from './deskripsi/rel';
 import {
   BrowserRouter,
   Routes,
@@ -16,8 +18,9 @@ class App extends React.Component {
         <h1>Hello, React Router!</h1>
         <Routes>
           <Route path="/" element={<Map />} />
-          <Route path="/" element={<Religi />} />
-        </Routes>
+          <Route path="/unsur/:id" element={<Religi />} />
+          <Route path="/deskripsi" element={<Deskripsi />} />
+        </Routes> 
       </div>
     </BrowserRouter>
     );

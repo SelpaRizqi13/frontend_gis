@@ -4,6 +4,7 @@ import statesData from './data'
 import './map.css'
 import budaya from './image/budaya.jpg'
 
+
 const style = {
   width: "100vw",
   height: "100vh"
@@ -86,6 +87,11 @@ class Map extends React.Component {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data.data);
+    const urlUnsur = "http://127.0.0.1:8000/api/getUnsur";
+    const responseUnsur = await fetch(urlUnsur);
+    const dataUnsur = await responseUnsur.json();
+    console.log(dataUnsur.data);
+
 
     // create map
     this.map = L.map("map", {
@@ -102,21 +108,8 @@ class Map extends React.Component {
       ]
     });
 
-    let template =`
-    <h1>8 Unsur Budaya</h1> 
-    <img src=${budaya} width="100%" height="100"/> </br>
-    <a href="">1. Religi</a></br>
-    <a href="">2. Kekerabatan dan Organisasi Sosial</a> </br>
-    <a href="">3. Bahasa</a></br>
-    <a href="">4. Kesenian</a></br>
-    <a href="">5. Teknologi</a></br>
-    <a href="">6. Ekonomi</a></br>
-    <a href="">7. Pengetahuan</a></br>
-    <a href="">8. Makanan</a></br>
-    `
-    console.log(budaya)
     data.data.map(d=> L.marker([d.latitude, d.longitude]).addTo(this.map)
-    .bindPopup(template))
+    .bindPopup(`<h1>8 Unsur Budaya</h1><img src=${budaya} width=100% height=100> </img></br>${dataUnsur.data.map(unsur =>`<a href='/unsur/${unsur.id}'> ${unsur.id}. ${unsur.name_element}</a></br>`).join("")}`));
 
     this.geojson = L.geoJson(statesData, {
       style: mapStyle,
