@@ -3,6 +3,7 @@ import L from "leaflet";
 import statesData from './data'
 import './map.css'
 import budaya from './image/budaya.jpg'
+import { CardBody, Col, Container, Row } from "reactstrap";
 
 
 const style = {
@@ -169,6 +170,12 @@ class Map extends React.Component {
   render() {
     var {items} = this.state;
     return (
+    <Container>
+       <Row>
+    <Col className="bg-light border">
+    <div>
+    <card>
+    <CardBody>
     <div id="map" style={style}> 
     {
       this.state.loading || !this.state.person ? (
@@ -185,6 +192,12 @@ class Map extends React.Component {
       )
     }
     </div>
+    </CardBody>
+    </card>
+    </div>
+    </Col>
+    </Row>
+    </Container>
     );
   }
 }

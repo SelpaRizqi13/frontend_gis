@@ -7,19 +7,19 @@ export default (props) => {
   const navigate = useNavigate();
     return (
     <Container>
-       <Row>
-    <Col className="bg-light border">
-    <card>
-    <CardImg
-                alt="Card image cap"
-                src={budaya}
-                top
-                width="100%"
-                height={500}
-              />
-    </card>
-    </Col>
-  </Row>
+    <Row>
+        <Col className="bg-light border">
+        <card>
+        <CardImg
+                    alt="Card image cap"
+                    src={budaya}
+                    top
+                    width="100%"
+                    height={500}
+                  />
+        </card>
+        </Col>
+    </Row>
     <Row xs="3" className='mt-5'>
       <Col className="bg-light border">
           <div>
@@ -49,13 +49,13 @@ export default (props) => {
               </CardBody>
             </Card>
           </div>
-    </Col>
-    <Col className="bg-light border">
-      Column
-    </Col>
-    <Col className="bg-light border">
-      Column
-    </Col>
+      </Col>
+      <Col className="bg-light border">
+        Column
+      </Col>
+      <Col className="bg-light border">
+        Column
+      </Col>
     
   </Row>
       </Container>
