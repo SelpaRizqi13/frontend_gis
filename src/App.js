@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Map from './Map';
 import Religi from './view/Religi';
 import Unsur from './view/Unsur'
+import Data from './view/data_unsur'
 import Deskripsi from './view/deskripsi';
 import {
   BrowserRouter,
@@ -20,7 +21,8 @@ class App extends React.Component {
           <Route path="/" excat element={<Map />} />
           <Route path="/religi" element={<Religi />} />
           <Route path="/unsur/:id" element={<Unsur />} />          
-          <Route path="/deskripsi" element={<Deskripsi />} />
+          <Route path="/deskripsi" element={<Deskripsi />}/>
+          <Route path="/data" element={<Data />}/>
         </Routes> 
       </div>
     </BrowserRouter>

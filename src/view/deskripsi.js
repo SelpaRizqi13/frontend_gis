@@ -11,14 +11,24 @@ import {
     CardImg,
     Row,
     Col,
-    Container} from "reactstrap";
+    Container,
+    UncontrolledCarousel} from "reactstrap";
 import {useNavigate} from 'react-router-dom'
 
+
+const carouselItems = [
+    {
+      src:
+      'https://picsum.photos/id/123/1200/600',
+      
+    },
+    
+  ];
 export default (props) => {
     return (
         <Container>
-            <Container>
-                <Navbar className="fixed-top navbar-light bg-light">
+        <div>
+            <Navbar className="navbar bg-light ">
                 <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
                     <div>
                     <h6>
@@ -28,15 +38,8 @@ export default (props) => {
                     
                 </NavbarBrand>
             </Navbar>
-            </Container>
-            <Card className="bg-dark text-white" style={{ borderRadius: 5 }}>
-                <CardImg src="https://picsum.photos/id/123/1200/600" alt="ipsum" />
-                    <CardImgOverlay>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                        <CardText>Last updated 3 mins ago</CardText>
-                    </CardImgOverlay>
-            </Card>
+        </div>
+      <UncontrolledCarousel items={carouselItems} />
             <Row>
             <Col className="bg-white ">
                 <Col className="bg-light">

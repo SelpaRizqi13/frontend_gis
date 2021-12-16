@@ -4,11 +4,7 @@ import budaya from '../image/budaya.jpg'
 // reactstrap components
 import { 
   
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
+  
   Card, CardImgOverlay, CardTitle, CardText, CardImg,
   Container, 
   UncontrolledCarousel,
@@ -43,18 +39,12 @@ const carouselItems = [
 
 function Carousel(){
   const navigate = useNavigate();
+  const [bodyClick, setBodyClick] = React.useState(false);
   return (
     <Container>
-    <Navbar className="fixed-top navbar-light bg-light">
-          <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
-            <div>
-              <h6>
-              <img src={Logo} width="80" height="80"/> Institut Seni Budaya Indonesia
-              </h6>
-            </div>
-            
-          </NavbarBrand>
-    </Navbar>
+      <div>
+        <nav />
+    </div>
       <UncontrolledCarousel items={carouselItems} />
       <Row xs="5" className='mt-5'>
               <div>
@@ -84,8 +74,6 @@ function Carousel(){
                   </CardBody>
                 </Card>
               </div>
-          
-          
               <div>
                 <Card>
                   <CardImg
@@ -194,10 +182,7 @@ function Carousel(){
                   </CardBody>
                 </Card>
               </div>
-          
-          
-    
-  </Row>
+              </Row>
     </Container>
   );
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import L from "leaflet";
 import statesData from './data'
+
 import './map.css'
 import budaya from './image/budaya.jpg'
-import { CardBody, Col, Container, Row } from "reactstrap";
+import Logo from './image/isbilogo.png'
+import { CardBody, Col, Container, Navbar, NavbarBrand, Row } from "reactstrap";
 
 
 const style = {
-  width: "100vw",
-  height: "100vh"
+  width: "100%",
+  height: "80vh"
 };
 
 const mapStyle = (feature) => {
@@ -171,32 +173,48 @@ class Map extends React.Component {
     var {items} = this.state;
     return (
     <Container>
-       <Row>
-    <Col className="bg-light border">
-    <div>
-    <card>
-    <CardBody>
-    <div id="map" style={style}> 
-    {
-      this.state.loading || !this.state.person ? (
-        <div>
-          loading ...
-        </div>
-      ) :
-      (
-        <div> 
-          <div>
-            {this.state.person.name_area}
-          </div>
-        </div>
-      )
-    }
-    </div>
-    </CardBody>
-    </card>
-    </div>
-    </Col>
-    </Row>
+      <div>
+            <Navbar className="navbar bg-primary">
+                <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
+                    <div>
+                    <h6 style={{color:'black'}}>
+                    <img src={Logo} width="80" height="80"/> Institut Seni Budaya Indonesia
+                    </h6>
+                    </div>
+                </NavbarBrand>
+            </Navbar>
+      </div>
+      <Row>
+            <Col className="bg-white">
+            <div>
+            <card>
+            <CardBody>
+            <div id="map" style={style}> 
+            {
+              this.state.loading || !this.state.person ? (
+                <div>
+                  loading ...
+                </div>
+              ) :
+              (
+                <div> 
+                  <div>
+                    {this.state.person.name_area}
+                  </div>
+                </div>
+              )
+            }
+            </div>
+            </CardBody>
+            </card>
+            </div>
+            </Col>
+      </Row>
+      <div>
+        <h3>
+        Apa itu GIS RKS?
+        </h3>
+      </div>
     </Container>
     );
   }
