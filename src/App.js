@@ -1,33 +1,29 @@
 import React from 'react';
-import { render } from 'react-dom';
 import Map from './Map';
-import Religi from './view/Religi';
-import Unsur from './view/Unsur'
-import Data from './view/data_unsur'
-import Deskripsi from './view/deskripsi';
+import Navbar from './components/Navbar';
 import {
-  BrowserRouter,
-  Routes,
-  Route
+  BrowserRouter as Router, Routes , Route
 } from "react-router-dom";
+import Unsur from './components/pages/Unsur';
+import Products from './components/pages/Products';
+import SignUp from './components/pages/SignUp';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class App extends React.Component {
-  render() {
+function App () {
     return (
-      <BrowserRouter>
-      <div>
+      <>
+      <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" excat element={<Map />} />
-          <Route path="/religi" element={<Religi />} />
-          <Route path="/unsur/:id" element={<Unsur />} />          
-          <Route path="/deskripsi" element={<Deskripsi />}/>
-          <Route path="/data" element={<Data />}/>
-        </Routes> 
-      </div>
-    </BrowserRouter>
+          <Route path='/' exact element={<Map />} />
+          <Route path='/unsur/:id' element={<Unsur />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/sign-up' element={<SignUp />} />
+        </Routes>
+      </Router>
+    </>
     );
-  }
 }
 
 export default App;

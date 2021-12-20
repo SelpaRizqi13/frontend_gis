@@ -1,11 +1,9 @@
 import React from "react";
 import L from "leaflet";
 import statesData from './data'
-
 import './map.css'
 import budaya from './image/budaya.jpg'
-import Logo from './image/isbilogo.png'
-import { CardBody, Col, Container, Navbar, NavbarBrand, Row } from "reactstrap";
+import Footer from './components/Footer';
 
 
 const style = {
@@ -172,50 +170,36 @@ class Map extends React.Component {
   render() {
     var {items} = this.state;
     return (
-    <Container>
-      <div>
-            <Navbar className="navbar bg-primary">
-                <NavbarBrand href="#pablo" onClick={e => e.preventDefault()}>
-                    <div>
-                    <h6 style={{color:'black'}}>
-                    <img src={Logo} width="80" height="80"/> Institut Seni Budaya Indonesia
-                    </h6>
-                    </div>
-                </NavbarBrand>
-            </Navbar>
-      </div>
-      <Row>
-            <Col className="bg-white">
-            <div>
-            <card>
-            <CardBody>
-            <div id="map" style={style}> 
-            {
-              this.state.loading || !this.state.person ? (
-                <div>
-                  loading ...
-                </div>
-              ) :
-              (
-                <div> 
-                  <div>
-                    {this.state.person.name_area}
+            <>
+              
+                  <div id="map" style={style}> 
+                  {
+                    this.state.loading || !this.state.person ? (
+                      <div>
+                        loading ...
+                      </div>
+                    ) :
+                    (
+                      <div> 
+                        <div>
+                          {this.state.person.name_area}
+                        </div>
+                      </div>
+                    )
+                  }
                   </div>
-                </div>
-              )
-            }
-            </div>
-            </CardBody>
-            </card>
-            </div>
-            </Col>
-      </Row>
-      <div>
-        <h3>
-        Apa itu GIS RKS?
-        </h3>
-      </div>
-    </Container>
+                  <h1>GIS</h1>
+      <h2>(Geographical Information System)</h2>
+
+      <p>
+      GIS RKS adalah aplikasi untuk menyajikan informasi tentang ragam kesenian Sunda yang dikelompokkan sesuai rumpun keseniannya, serta informasi tentang lokasi wilayah di mana kesenian itu hidup dan berkembang.
+
+Ragam kesenian dikelompokkan ke dalam rumpun tertentu guna memudahkan pengguna dalam mencari data kesenian yang dibutuhkan.
+
+Lokasi wilayah dan sebaran kesenian Jawa Barat disajikan dalam bentuk peta, dilengkapi dengan multimedia (teks, image, audio visual); menjadikan tampilan GIS RKS lebih praktis dan dinamis.
+      </p>
+      <Footer />
+            </>
     );
   }
 }
