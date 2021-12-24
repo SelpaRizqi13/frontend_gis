@@ -108,9 +108,9 @@ class Map extends React.Component {
         })
       ]
     });
-
     data.data.map(d=> L.marker([d.latitude, d.longitude]).addTo(this.map)
-    .bindPopup(`<h1>8 Unsur Budaya</h1><img src=${budaya} width=100% height=100> </img></br>${dataUnsur.data.map(unsur =>`<a href='/unsur/${unsur.id}'> ${unsur.id}. ${unsur.name_element}</a></br>`).join("")}`));
+    
+    .bindPopup(`<h1>8 Unsur Budaya</h1><img src=${budaya} width=100% height=100> </img></br>${dataUnsur.data.map(unsur =>`<a href='/unsur/${unsur.id}/${d.id}'> ${unsur.id}. ${unsur.name_element}</a></br>`).join("")}`));
 
     this.geojson = L.geoJson(statesData, {
       style: mapStyle,

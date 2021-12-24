@@ -2,7 +2,8 @@ import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
-function Cards() {
+function Cards(posts) {
+  console.log(posts);
   return (
     <div className='cards'>
       <h1>Religi </h1>

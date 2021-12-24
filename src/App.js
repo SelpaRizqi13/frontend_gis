@@ -17,7 +17,7 @@ function App () {
         <Navbar />
         <Routes>
           <Route path='/' exact element={<Map />} />
-          <Route path='/unsur/:id' element={<Unsur />} />
+          <Route path='/unsur/:id_element/:id_area' element={<Unsur />} />
           <Route path='/products' element={<Products />} />
           <Route path='/sign-up' element={<SignUp />} />
         </Routes>
