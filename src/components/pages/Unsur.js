@@ -58,7 +58,8 @@ export default function Unsur() {
                         text={jenis.name_type}
                         label={jenis.element.name_element}
                         alt={jenis.name_type}
-                        path="/products"
+                      path={`/products/${params.id_element}/${params.id_area}/${jenis.id}`}
+
                       />
                     </div>
                   );

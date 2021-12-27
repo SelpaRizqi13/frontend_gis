@@ -18,7 +18,7 @@ function App () {
         <Routes>
           <Route path='/' exact element={<Map />} />
           <Route path='/unsur/:id_element/:id_area' element={<Unsur />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/products/:id_element/:id_area/:id_type' element={<Products />} />
           <Route path='/sign-up' element={<SignUp />} />
         </Routes>
       </Router>

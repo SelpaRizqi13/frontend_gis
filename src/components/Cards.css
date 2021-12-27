@@ -31,9 +31,12 @@ h6{
 
 .cards__items {
   margin-bottom: 24px;
+
 }
 
 .cards__item {
+  width: 300px;
+  height: 310px;
   display: flex;
   flex: 1;
   margin: 0 1rem;
